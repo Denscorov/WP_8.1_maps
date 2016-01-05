@@ -8,6 +8,8 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using PhoneApp1.Resources;
+using Microsoft.Phone.Maps.Toolkit;
+
 
 namespace PhoneApp1
 {

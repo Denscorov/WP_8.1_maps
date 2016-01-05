@@ -1,1 +1,1 @@
-c:\users\densc\documents\visual studio 2015\Projects\PhoneApp1\PhoneApp1\PhoneApp1.csproj;neutral
+G:\git\visual_studio\WP_8.1_maps\PhoneApp1\PhoneApp1.csproj;neutral
