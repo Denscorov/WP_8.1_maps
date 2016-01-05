@@ -19,22 +19,12 @@
         <Grid x:Name="ContentPanel" Grid.Row="1" >
 
             <maps:Map Name="map"  />
-
+            
+        
+             
         </Grid>
     </Grid>
 
-    <phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar Mode="Minimized">
-
-            <shell:ApplicationBar.Buttons>
-                <shell:ApplicationBarIconButton IconUri="/Toolkit.Content/ApplicationBar.Add.png" Text="Add"  />
-            </shell:ApplicationBar.Buttons>
-            
-            <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem Text="item1" />
-            </shell:ApplicationBar.MenuItems>
-            
-        </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>
+   
     
 </phone:PhoneApplicationPage>
