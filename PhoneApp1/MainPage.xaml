@@ -25,6 +25,18 @@
         </Grid>
     </Grid>
 
-   
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar Mode="Minimized" Opacity="0.5">
+
+            <shell:ApplicationBar.Buttons><!-- Buttons menu -->
+                <shell:ApplicationBarIconButton IconUri="" Text="" />
+            </shell:ApplicationBar.Buttons>
+
+            <shell:ApplicationBar.MenuItems><!-- Items menu -->
+                
+            </shell:ApplicationBar.MenuItems>
+            
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
     
 </phone:PhoneApplicationPage>
