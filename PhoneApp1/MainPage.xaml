@@ -11,27 +11,42 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
-    SupportedOrientations="Portrait" Orientation="Portrait"
-    shell:SystemTray.IsVisible="True">
+    SupportedOrientations="Landscape" Orientation="Landscape"
+    shell:SystemTray.IsVisible="False">
 
    
         <Grid x:Name="ContentPanel" >
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="Auto" />
-        </Grid.ColumnDefinitions> 
-            
-            
-            
-        </Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+        <Image Source="/Toolkit.Content/Icons/map-marker-off.png"/>
+        <maps:Map Name="map" Grid.ColumnSpan="3" Grid.RowSpan="5" Hold="map_Hold"/>
+        
+        <Popup Name="myPopup" IsOpen="False" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Background="Gray" Opacity="0.8">
+                <TextBlock Name="p_text"/>
+            </StackPanel>    
+        </Popup>
+
+        
+    </Grid>
 
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="False" Mode="Minimized" Opacity="1">
             <shell:ApplicationBar.Buttons>
                 <shell:ApplicationBarIconButton IconUri="/Toolkit.Content/Icons/map-marker-multiple.png" Text="Route" x:Name="route" Click="route_Click"/>
                 <shell:ApplicationBarIconButton IconUri="/Toolkit.Content/Icons/map-marker-radius.png" Text="Location" x:Name="Location" Click="Location_Click"/>
-                <shell:ApplicationBarIconButton IconUri="/Toolkit.Content/Icons/magnify.png" Text="Search" x:Name="btn_search" />
+                <shell:ApplicationBarIconButton IconUri="/Toolkit.Content/Icons/magnify.png" Text="Search" x:Name="btn_search" Click="btn_search_Click" />
             </shell:ApplicationBar.Buttons>
 
             <shell:ApplicationBar.MenuItems>
