@@ -13,6 +13,7 @@ using Microsoft.Phone.Maps.Controls;
 using System.Device.Location;
 using System.Threading.Tasks;
 using Microsoft.Phone.Maps.Toolkit;
+using Microsoft.Phone.Controls.Maps;
 
 namespace PhoneApp1
 {
@@ -55,7 +56,6 @@ namespace PhoneApp1
             MessageBox.Show(e.Status.ToString());
         }
 
-       
 
         
     }

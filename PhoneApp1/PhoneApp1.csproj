@@ -160,8 +160,13 @@
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
-    <Content Include="Toolkit.Content\map-marker-circle.png" />
-    <Content Include="Toolkit.Content\map-marker.png" />
+    <Content Include="Toolkit.Content\Icons\crosshairs-gps.png" />
+    <Content Include="Toolkit.Content\Icons\crosshairs.png" />
+    <Content Include="Toolkit.Content\Icons\map-marker-circle.png" />
+    <Content Include="Toolkit.Content\Icons\map-marker-multiple.png" />
+    <Content Include="Toolkit.Content\Icons\map-marker-off.png" />
+    <Content Include="Toolkit.Content\Icons\map-marker-radius.png" />
+    <Content Include="Toolkit.Content\Icons\map-marker.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">
