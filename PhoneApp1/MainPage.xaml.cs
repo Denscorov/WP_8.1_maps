@@ -1,19 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Navigation;
-using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
-using PhoneApp1.Resources;
-using Microsoft.Phone.Maps.Toolkit;
-using Microsoft.Phone.Maps.Controls;
+
 using System.Device.Location;
-using System.Threading.Tasks;
-using Microsoft.Phone.Maps.Toolkit;
-using Microsoft.Phone.Controls.Maps;
+using System.Windows.Shapes;
+using System.Windows.Media;
+using Microsoft.Phone.Maps.Controls;
+using Microsoft.Phone.Controls;
 
 namespace PhoneApp1
 {
@@ -41,14 +33,23 @@ namespace PhoneApp1
 
         private void Geowach_PositionChanged(object sender, GeoPositionChangedEventArgs<GeoCoordinate> e)
         {
-            Pushpin p = new Pushpin();
-            p.Content = e.Position.Location.Course.ToString();
-            p.GeoCoordinate = e.Position.Location;
-            MapOverlay mo = new MapOverlay() { Content = p };
-            mo.GeoCoordinate = e.Position.Location;
-            MapLayer ml = new MapLayer();
-            ml.Add(mo);
-            map.Layers.Add(ml);
+            map.Layers.Clear();
+
+            Ellipse myCircle = new Ellipse();
+            myCircle.Fill = new SolidColorBrush(Colors.Blue);
+            myCircle.Height = 20;
+            myCircle.Width = 20;
+            myCircle.Opacity = 50;
+
+            MapOverlay myLocationOverlay = new MapOverlay();
+            myLocationOverlay.Content = myCircle;
+            myLocationOverlay.PositionOrigin = new Point(0.5, 0.5);
+            myLocationOverlay.GeoCoordinate = e.Position.Location;
+
+            MapLayer myLocationLayer = new MapLayer();
+            myLocationLayer.Add(myLocationOverlay);
+
+            map.Layers.Add(myLocationLayer);
         }
 
         private void Geowach_StatusChanged(object sender, GeoPositionStatusChangedEventArgs e)
@@ -56,7 +57,5 @@ namespace PhoneApp1
             MessageBox.Show(e.Status.ToString());
         }
 
-
-        
     }
 }

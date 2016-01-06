@@ -23,11 +23,14 @@
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
-            <maps:Map Name="map" Grid.ColumnSpan="3" Grid.RowSpan="2"  />
+            <TextBox Name="search" Grid.Row="0" Grid.ColumnSpan="3" Margin="0" Visibility="Collapsed"/>
+
+            <maps:Map Name="map" Grid.ColumnSpan="3" Grid.RowSpan="3"  />
 
           
             <Button Content="" Grid.Column="0" Grid.Row="1" BorderBrush="Transparent" FontSize="50" />
@@ -41,7 +44,7 @@
             <shell:ApplicationBar.Buttons>
                 <shell:ApplicationBarIconButton IconUri="/Toolkit.Content/Icons/map-marker-multiple.png" Text="Route"/>
                 <shell:ApplicationBarIconButton IconUri="/Toolkit.Content/Icons/map-marker-radius.png" Text="Location" x:Name="Location" Click="Location_Click"/>
-                <shell:ApplicationBarIconButton IconUri="/Toolkit.Content/Icons/magnify.png" Text="Search"/>
+                <shell:ApplicationBarIconButton IconUri="/Toolkit.Content/Icons/magnify.png" Text="Search" x:Name="btn_search" />
             </shell:ApplicationBar.Buttons>
             
             <shell:ApplicationBar.MenuItems>
