@@ -9,6 +9,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using PhoneApp1.Resources;
 using Microsoft.Phone.Maps.Toolkit;
+using System.Device.Location;
 
 
 namespace PhoneApp1
@@ -22,6 +23,23 @@ namespace PhoneApp1
             
         }
 
-        
+        private void Location_Click(object sender, EventArgs e)
+        {
+            GeoCoordinate geocor = new GeoCoordinate();
+            GeoCoordinateWatcher geowach = new GeoCoordinateWatcher(GeoPositionAccuracy.High);
+            geowach.PositionChanged += Geowach_PositionChanged;
+            geowach.StatusChanged += Geowach_StatusChanged;
+            geowach.Start();
+        }
+
+        private void Geowach_PositionChanged(object sender, GeoPositionChangedEventArgs<GeoCoordinate> e)
+        {
+            map.Center = e.Position.Location;
+        }
+
+        private void Geowach_StatusChanged(object sender, GeoPositionStatusChangedEventArgs e)
+        {
+            SystemTray.ProgressIndicator = new ProgressIndicator() { Text = e.Status.ToString(),IsVisible = true };
+        }
     }
 }

@@ -1,6 +1,6 @@
-﻿<xapCache source="F:\git\visual_studio\WP_8.1_maps\PhoneApp1\Bin\Debug\PhoneApp1_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="06.01.2016 15:13:13">
-  <file source="F:\git\visual_studio\WP_8.1_maps\PhoneApp1\Bin\Debug\resources.pri" archivePath="resources.pri" lastWriteTime="06.01.2016 15:13:11" />
-  <file source="F:\git\visual_studio\WP_8.1_maps\PhoneApp1\obj\Debug\PhoneApp1.dll" archivePath="PhoneApp1.dll" lastWriteTime="06.01.2016 15:13:10" />
+﻿<xapCache source="F:\git\visual_studio\WP_8.1_maps\PhoneApp1\Bin\Debug\PhoneApp1_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="06.01.2016 15:31:41">
+  <file source="F:\git\visual_studio\WP_8.1_maps\PhoneApp1\Bin\Debug\resources.pri" archivePath="resources.pri" lastWriteTime="06.01.2016 15:29:07" />
+  <file source="F:\git\visual_studio\WP_8.1_maps\PhoneApp1\obj\Debug\PhoneApp1.dll" archivePath="PhoneApp1.dll" lastWriteTime="06.01.2016 15:31:40" />
   <file source="F:\git\visual_studio\WP_8.1_maps\PhoneApp1\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="06.01.2016 14:59:26" />
   <file source="F:\git\visual_studio\WP_8.1_maps\PhoneApp1\Assets\BadgeLogo.png" archivePath="Assets\BadgeLogo.png" lastWriteTime="06.01.2016 14:59:26" />
   <file source="F:\git\visual_studio\WP_8.1_maps\PhoneApp1\Assets\Logo.png" archivePath="Assets\Logo.png" lastWriteTime="06.01.2016 14:59:26" />
@@ -19,6 +19,8 @@
   <file source="F:\git\visual_studio\WP_8.1_maps\PhoneApp1\Toolkit.Content\ApplicationBar.Check.png" archivePath="Toolkit.Content\ApplicationBar.Check.png" lastWriteTime="06.01.2016 14:59:26" />
   <file source="F:\git\visual_studio\WP_8.1_maps\PhoneApp1\Toolkit.Content\ApplicationBar.Delete.png" archivePath="Toolkit.Content\ApplicationBar.Delete.png" lastWriteTime="06.01.2016 14:59:26" />
   <file source="F:\git\visual_studio\WP_8.1_maps\PhoneApp1\Toolkit.Content\ApplicationBar.Select.png" archivePath="Toolkit.Content\ApplicationBar.Select.png" lastWriteTime="06.01.2016 14:59:26" />
+  <file source="F:\git\visual_studio\WP_8.1_maps\PhoneApp1\Toolkit.Content\map-marker-circle.png" archivePath="Toolkit.Content\map-marker-circle.png" lastWriteTime="06.01.2016 15:20:12" />
+  <file source="F:\git\visual_studio\WP_8.1_maps\PhoneApp1\Toolkit.Content\map-marker.png" archivePath="Toolkit.Content\map-marker.png" lastWriteTime="06.01.2016 15:19:49" />
   <file source="F:\git\visual_studio\WP_8.1_maps\PhoneApp1\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="06.01.2016 15:01:49" />
   <file source="F:\git\visual_studio\WP_8.1_maps\PhoneApp1\Bin\Debug\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="06.01.2016 14:59:26" />
   <file source="F:\git\visual_studio\WP_8.1_maps\PhoneApp1\Bin\Debug\Assets\Tiles\FlipCycleTileLarge.png" archivePath="Assets\Tiles\FlipCycleTileLarge.png" lastWriteTime="06.01.2016 14:59:26" />
@@ -30,7 +32,7 @@
   <file source="F:\git\visual_studio\WP_8.1_maps\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll" archivePath="Microsoft.Phone.Controls.Toolkit.dll" lastWriteTime="06.01.2016 15:01:24" />
   <file source="F:\git\visual_studio\WP_8.1_maps\PhoneApp1\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="06.01.2016 14:59:26" />
   <file source="F:\git\visual_studio\WP_8.1_maps\PhoneApp1\Assets\Tiles\FlipCycleTileMedium.png" archivePath="Assets\Tiles\FlipCycleTileMedium.png" lastWriteTime="06.01.2016 14:59:26" />
-  <file source="F:\git\visual_studio\WP_8.1_maps\PhoneApp1\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="06.01.2016 15:01:49" />
-  <file source="F:\git\visual_studio\WP_8.1_maps\PhoneApp1\obj\Debug\MDILProjectFiles.xml" archivePath="MDILProjectFiles.xml" lastWriteTime="06.01.2016 15:13:12" />
-  <file source="F:\git\visual_studio\WP_8.1_maps\PhoneApp1\Bin\Debug\AppxManifest.xml" archivePath="AppxManifest.xml" lastWriteTime="06.01.2016 15:13:11" />
+  <file source="F:\git\visual_studio\WP_8.1_maps\PhoneApp1\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="06.01.2016 15:30:01" />
+  <file source="F:\git\visual_studio\WP_8.1_maps\PhoneApp1\obj\Debug\MDILProjectFiles.xml" archivePath="MDILProjectFiles.xml" lastWriteTime="06.01.2016 15:31:41" />
+  <file source="F:\git\visual_studio\WP_8.1_maps\PhoneApp1\Bin\Debug\AppxManifest.xml" archivePath="AppxManifest.xml" lastWriteTime="06.01.2016 15:29:07" />
 </xapCache>

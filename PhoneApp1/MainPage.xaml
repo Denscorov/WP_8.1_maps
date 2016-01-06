@@ -29,7 +29,7 @@
         <shell:ApplicationBar Mode="Minimized" Opacity="0.5">
 
             <shell:ApplicationBar.Buttons><!-- Buttons menu -->
-                <shell:ApplicationBarIconButton IconUri="" Text="" />
+                <shell:ApplicationBarIconButton IconUri="Toolkit.Content/map-marker.png" Text="Location" x:Name="Location" Click="Location_Click"/>
             </shell:ApplicationBar.Buttons>
 
             <shell:ApplicationBar.MenuItems><!-- Items menu -->

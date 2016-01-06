@@ -21,6 +21,8 @@
     <File>Toolkit.Content\ApplicationBar.Check.png</File>
     <File>Toolkit.Content\ApplicationBar.Delete.png</File>
     <File>Toolkit.Content\ApplicationBar.Select.png</File>
+    <File>Toolkit.Content\map-marker-circle.png</File>
+    <File>Toolkit.Content\map-marker.png</File>
     <File>AppManifest.xaml</File>
     <File>Assets\ApplicationIcon.png</File>
     <File>Assets\Tiles\FlipCycleTileMedium.png</File>

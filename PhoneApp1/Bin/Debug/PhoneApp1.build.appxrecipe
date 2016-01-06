@@ -236,6 +236,12 @@
     <AppxPackagedFile Include="F:\git\visual_studio\WP_8.1_maps\PhoneApp1\Toolkit.Content\ApplicationBar.Select.png">
       <PackagePath>Toolkit.Content\ApplicationBar.Select.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\git\visual_studio\WP_8.1_maps\PhoneApp1\Toolkit.Content\map-marker-circle.png">
+      <PackagePath>Toolkit.Content\map-marker-circle.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\git\visual_studio\WP_8.1_maps\PhoneApp1\Toolkit.Content\map-marker.png">
+      <PackagePath>Toolkit.Content\map-marker.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="F:\git\visual_studio\WP_8.1_maps\PhoneApp1\README_FIRST.txt">
       <PackagePath>README_FIRST.txt</PackagePath>
     </AppxPackagedFile>
