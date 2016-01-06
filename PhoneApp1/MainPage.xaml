@@ -16,26 +16,39 @@
 
     <!--LayoutRoot представляет корневую сетку, где размещается все содержимое страницы-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
-        <Grid x:Name="ContentPanel" Grid.Row="1" >
+        <Grid x:Name="ContentPanel" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
 
-            <maps:Map Name="map"  />
-            
-        
-             
+            <maps:Map Name="map" Grid.ColumnSpan="3" Grid.RowSpan="2"  />
+
+            <Viewbox Grid.Column="0" Grid.Row="1" Width="48" Height="48">
+                <Canvas Width="24" Height="24">
+                    <Path Data="M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8M3.05,13H1V11H3.05C3.5,6.83 6.83,3.5 11,3.05V1H13V3.05C17.17,3.5 20.5,6.83 20.95,11H23V13H20.95C20.5,17.17 17.17,20.5 13,20.95V23H11V20.95C6.83,20.5 3.5,17.17 3.05,13M12,5A7,7 0 0,0 5,12A7,7 0 0,0 12,19A7,7 0 0,0 19,12A7,7 0 0,0 12,5Z" Fill="Green" />
+                </Canvas>
+            </Viewbox>
+            <Button Content="☺" Grid.Column="1" Grid.Row="1" BorderBrush="Transparent" />
+            <Button Content="☻" Grid.Column="2" Grid.Row="1"/>
+
         </Grid>
     </Grid>
 
     <phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar Mode="Minimized" Opacity="0.5">
-
-            <shell:ApplicationBar.Buttons><!-- Buttons menu -->
-                <shell:ApplicationBarIconButton IconUri="Toolkit.Content/map-marker.png" Text="Location" x:Name="Location" Click="Location_Click"/>
-            </shell:ApplicationBar.Buttons>
-
-            <shell:ApplicationBar.MenuItems><!-- Items menu -->
-                
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Minimized" Opacity="1">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="Toolkit.Content/map-marker.png" Text="Location" x:Name="Location" Click="Location_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
             </shell:ApplicationBar.MenuItems>
-            
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
     

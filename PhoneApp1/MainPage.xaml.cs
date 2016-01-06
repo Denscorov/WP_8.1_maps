@@ -24,12 +24,14 @@ namespace PhoneApp1
             InitializeComponent();
             
         }
-        MapLayer ml = new MapLayer();
+       
 
         private void Location_Click(object sender, EventArgs e)
         {
             GeoCoordinate geocor = new GeoCoordinate();
             GeoCoordinateWatcher geowach = new GeoCoordinateWatcher(GeoPositionAccuracy.High);
+            geowach.MovementThreshold = 1;
+            geowach.TryStart(true, new TimeSpan(0, 0, 0, 0, 1000));
             geowach.PositionChanged += Geowach_PositionChanged;
             geowach.StatusChanged += Geowach_StatusChanged;
             geowach.Start();
@@ -38,27 +40,23 @@ namespace PhoneApp1
 
         private void Geowach_PositionChanged(object sender, GeoPositionChangedEventArgs<GeoCoordinate> e)
         {
-            //map.Center = e.Position.Location;
             Pushpin p = new Pushpin();
             p.Content = e.Position.Location.Course.ToString();
             p.GeoCoordinate = e.Position.Location;
-
-            MapChildCollection mc = new MapChildCollection();
-            mc.Add(p);
             MapOverlay mo = new MapOverlay() { Content = p };
+            mo.GeoCoordinate = e.Position.Location;
+            MapLayer ml = new MapLayer();
             ml.Add(mo);
-
-            
+            map.Layers.Add(ml);
         }
 
         private void Geowach_StatusChanged(object sender, GeoPositionStatusChangedEventArgs e)
         {
-           
-            SystemTray.ProgressIndicator = new ProgressIndicator();
-            SystemTray.ProgressIndicator.Text = e.Status.ToString();
-            SystemTray.ProgressIndicator.IsVisible = true;
-            Task.Delay(1000);
-            SystemTray.IsVisible = false;
+            MessageBox.Show(e.Status.ToString());
         }
+
+       
+
+        
     }
 }
