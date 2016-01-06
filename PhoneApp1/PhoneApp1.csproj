@@ -162,6 +162,7 @@
     <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
     <Content Include="Toolkit.Content\Icons\crosshairs-gps.png" />
     <Content Include="Toolkit.Content\Icons\crosshairs.png" />
+    <Content Include="Toolkit.Content\Icons\magnify.png" />
     <Content Include="Toolkit.Content\Icons\map-marker-circle.png" />
     <Content Include="Toolkit.Content\Icons\map-marker-multiple.png" />
     <Content Include="Toolkit.Content\Icons\map-marker-off.png" />
