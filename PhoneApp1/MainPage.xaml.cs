@@ -10,10 +10,11 @@ using Microsoft.Phone.Maps.Services;
 using System.Collections.Generic;
 using Windows.Devices.Geolocation;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.ComponentModel;
 using Microsoft.Phone.Controls.Maps;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Animation;
+using System.Windows.Controls.Primitives;
 
 namespace PhoneApp1
 {
@@ -140,10 +141,10 @@ namespace PhoneApp1
         {
             
         }
-
+        GeoCoordinate g;
         private void map_Hold(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            GeoCoordinate g = map.ConvertViewportPointToGeoCoordinate(e.GetPosition(map));
+            g = map.ConvertViewportPointToGeoCoordinate(e.GetPosition(map));
 
             ReverseGeocodeQuery MyGeocodeQuery = new ReverseGeocodeQuery();
             MyGeocodeQuery.GeoCoordinate = g;
@@ -168,7 +169,7 @@ namespace PhoneApp1
                 MapOverlay mo = new MapOverlay();
                 mo.Content = myCircle;
                 mo.PositionOrigin = new Point(0.5, 0.5);
-                mo.GeoCoordinate = e.Result[0].GeoCoordinate;
+                mo.GeoCoordinate = g;
                 Microsoft.Phone.Maps.Controls.MapLayer ml = new Microsoft.Phone.Maps.Controls.MapLayer();
                 ml.Add(mo);
                 map.Layers.Add(ml);
@@ -176,8 +177,49 @@ namespace PhoneApp1
 
                 p_text.Text = String.Format("City: {0},\n Street: {1},\n House number: {2}",e.Result[0].Information.Address.City, e.Result[0].Information.Address.Street, e.Result[0].Information.Address.HouseNumber);
                 myPopup.IsOpen = true;
+
+               
+
+                Duration duration = new Duration(TimeSpan.FromSeconds(2));
+
+                // Create two DoubleAnimations and set their properties.
+                DoubleAnimation myDoubleAnimation1 = new DoubleAnimation();
+                DoubleAnimation myDoubleAnimation2 = new DoubleAnimation();
+
+                myDoubleAnimation1.Duration = duration;
+                myDoubleAnimation2.Duration = duration;
+
+                Storyboard sb = new Storyboard();
+                sb.Duration = duration;
+
+                sb.Children.Add(myDoubleAnimation1);
+                sb.Children.Add(myDoubleAnimation2);
+
+                Storyboard.SetTarget(myDoubleAnimation1, po_stack);
+                Storyboard.SetTarget(myDoubleAnimation2, po_stack);
+
+                // Set the attached properties of Canvas.Left and Canvas.Top
+                // to be the target properties of the two respective DoubleAnimations.
+                Storyboard.SetTargetProperty(myDoubleAnimation1, new PropertyPath("(Canvas.Left)"));
+                Storyboard.SetTargetProperty(myDoubleAnimation2, new PropertyPath("(Canvas.Top)"));
+
+                myDoubleAnimation1.To = 200;
+                myDoubleAnimation2.To = 200;
+
+                // Make the Storyboard a resource.
+                po_stack.Resources.Add("unique_id", sb);
+
+                // Begin the animation.
+                sb.Begin();
+
             }
         }
 
+       
+
+        private void myPopup_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            myPopup.IsOpen = false;
+        }
     }
 }
