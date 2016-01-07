@@ -9,6 +9,11 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Maps.Services;
 using System.Collections.Generic;
 using Windows.Devices.Geolocation;
+using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
+using System.ComponentModel;
+using Microsoft.Phone.Controls.Maps;
+using System.Windows.Media.Imaging;
 
 namespace PhoneApp1
 {
@@ -71,10 +76,14 @@ namespace PhoneApp1
             myLocationOverlay.PositionOrigin = new Point(0.5, 0.5);
             myLocationOverlay.GeoCoordinate = e.Position.Location;
 
-            MapLayer myLocationLayer = new MapLayer();
+            Microsoft.Phone.Maps.Controls.MapLayer myLocationLayer = new Microsoft.Phone.Maps.Controls.MapLayer();
             myLocationLayer.Add(myLocationOverlay);
 
             map.Layers.Add(myLocationLayer);
+            map.Center = e.Position.Location;
+            map.SetView(e.Position.Location, 18, MapAnimationKind.Linear);
+            
+            //map.SetView(e.Position.Location, 18);
         }
 
         private void Geowach_StatusChanged(object sender, GeoPositionStatusChangedEventArgs e)
@@ -117,8 +126,58 @@ namespace PhoneApp1
                 Route MyRoute = e.Result;
                 MapRoute MyMapRoute = new MapRoute(MyRoute);
                 map.AddRoute(MyMapRoute);
+                map.SetView(MyRoute.BoundingBox, MapAnimationKind.Parabolic);
                 MyQuery.Dispose();
             }
         }
+        
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            myPopup.IsOpen = true;
+        }
+
+        protected override void OnBackKeyPress(CancelEventArgs e)
+        {
+            
+        }
+
+        private void map_Hold(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            GeoCoordinate g = map.ConvertViewportPointToGeoCoordinate(e.GetPosition(map));
+
+            ReverseGeocodeQuery MyGeocodeQuery = new ReverseGeocodeQuery();
+            MyGeocodeQuery.GeoCoordinate = g;
+
+            MyGeocodeQuery.QueryCompleted += MyGeocodeQuery_QueryCompleted;
+            MyGeocodeQuery.QueryAsync();
+
+        }
+
+        private void MyGeocodeQuery_QueryCompleted(object sender, QueryCompletedEventArgs<IList<MapLocation>> e)
+        {
+            if (e.Error == null)
+            {
+
+                Ellipse myCircle = new Ellipse();
+                myCircle.Fill = new SolidColorBrush(Colors.Blue);
+                myCircle.Height = 20;
+                myCircle.Width = 20;
+                myCircle.Opacity = 50;
+
+
+                MapOverlay mo = new MapOverlay();
+                mo.Content = myCircle;
+                mo.PositionOrigin = new Point(0.5, 0.5);
+                mo.GeoCoordinate = e.Result[0].GeoCoordinate;
+                Microsoft.Phone.Maps.Controls.MapLayer ml = new Microsoft.Phone.Maps.Controls.MapLayer();
+                ml.Add(mo);
+                map.Layers.Add(ml);
+
+
+                p_text.Text = String.Format("City: {0},\n Street: {1},\n House number: {2}",e.Result[0].Information.Address.City, e.Result[0].Information.Address.Street, e.Result[0].Information.Address.HouseNumber);
+                myPopup.IsOpen = true;
+            }
+        }
+
     }
 }
